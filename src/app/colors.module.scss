@@ -1,0 +1,27 @@
+$green: '#7BDA72';
+$orange: '#F0C42D';
+$red: '#EC2C45';
+$grey: '#464A4F';
+$white: '#FFFFFF';
+$lightBlue: '#7CDDED';
+$darkRed: '#960232';
+$purple: '#512871';
+$background: '#F5F5F5';
+
+$colors: (
+  green: $green,
+  orange: $orange,
+  red: $red,
+  grey: $grey,
+  white: $white,
+  lightBlue: $lightBlue,
+  darkRed: $darkRed,
+  purple: $purple,
+  background: $background,
+);
+
+:export {
+  @each $colorName, $color in $colors {
+    #{$colorName}: $color;
+  }
+}

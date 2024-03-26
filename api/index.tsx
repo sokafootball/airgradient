@@ -1,11 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-// import { TOKEN } from '../constants';
+import { TOKEN } from '../constants';
 import {
   IGetLocationCurrentMeasuresRequest,
   IGetLocationCurrentMeasuresResponse,
 } from './models';
-const token = process.env.CONTENTFUL_ACCESS_TOKEN;
-console.log(process.env);
+
 export const airGradientApi = createApi({
   reducerPath: 'airGradient',
   baseQuery: fetchBaseQuery({
@@ -17,7 +16,7 @@ export const airGradientApi = createApi({
       IGetLocationCurrentMeasuresRequest
     >({
       query: ({ locationId }) =>
-        `locations/${locationId}/measures/current?token=${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+        `locations/${locationId}/measures/current?token=${TOKEN}`,
     }),
   }),
 });
